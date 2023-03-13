@@ -1,0 +1,51 @@
+<view class="songListContainer">
+  <!-- 头部区域 -->
+  <view class="header">
+    <image src="{{playList[0].al.picUrl}}"></image>
+    <view class="content">
+      <text>{{title}}</text>
+    </view>
+  </view>
+
+  <!-- 列表区域 -->
+  <view class="listContainer">
+    <view class="listHeader" bindtap="allSuiPlay">
+      <text class="iconfont iconcaret-right big">随机播放全部</text>
+    </view>
+  </view>
+<!-- 内容区域 -->
+
+  <scroll-view scroll-y class="listScroll" scroll-top='{{topNum}}' bindscroll="scrolltoupper">
+    <view class="scrollItem" wx:for="{{playList}}" wx:key="index" data-index="{{index}}" bindtap="toPlay"> 
+      <image src="{{item.al.picUrl}}"></image>
+      <view class="musicInfo">
+        <text class="title">{{item.al.name}}</text>
+        <text class="singer">{{item.ar[0].name}}</text>
+          <text class="iconfont icongengduo more" catchtap="more" data-index="{{index}}"></text>
+      </view>
+    </view>
+    <image class='iconfont icontop goTop' hidden='{{!cangotop}}' catchtap='goTop'></image>
+  </scroll-view>
+</view>
+
+<!-- 显示用户歌单信息 -->
+
+<van-dialog
+  use-slot
+  title="添加音乐到我的歌单"
+  show="{{isShow}}"
+  confirmButtonText="取消"
+  show-cancel-button="{{false}}"
+  showConfirmButton
+  bind:cancel="dialogOnClose"
+>
+<scroll-view scroll-y class="listScrollII">
+    <view class="scrollItem" wx:for="{{userSongList}}" wx:key="index" data-index="{{index}}" bindtap="addMyList">
+      <image src="{{item.coverImgUrl}}"></image>
+      <view class="musicInfo">
+        <text class="title">{{item.listName}}</text>
+      </view>
+    </view>
+</scroll-view>
+</van-dialog>
+

@@ -1,0 +1,104 @@
+
+<van-tabs active="{{active}}" bind:change="onClick">
+  <van-tab title="华语风">
+    <block wx:for="{{songList}}" wx:key="index">
+      <view class="musiclist-container {{item.mId === playingId ? 'playing': ''}}" data-musicid="{{item.id}}" data-index="{{index}}" bindtap="onSelect">
+        <view class="musiclist-index">{{index+1}}</view>
+        <view class="musiclist-info">
+          <view class="musiclist-name">
+            {{item.mname}}
+          </view>
+          <view class="musiclist-singer">{{item.singer}}</view>
+          <text class="iconfont icontianjia more" catchtap="more" data-index="{{index}}"></text>
+        </view>
+      </view>
+    </block>
+    <image src="cloud://colude-study-3gbbb4cha336b2cf.636f-colude-study-3gbbb4cha336b2cf-1304854335/毕设/imagesStatic/top.png" class='goTop' hidden='{{!floorstatus}}' bindtap="goTop"></image>
+  </van-tab>
+  <van-tab title="欧美风">
+    <block wx:for="{{songList}}" wx:key="index">
+      <view class="musiclist-container {{item.mId === playingId ? 'playing': ''}}" data-musicid="{{item.id}}"  bindtap="onSelect" data-index="{{index}}" >
+        <view class="musiclist-index">{{index+1}}</view>
+        <view class="musiclist-info">
+          <view class="musiclist-name">
+            {{item.mname}}
+          </view>
+          <view class="musiclist-singer">{{item.singer}}</view>
+          <text class="iconfont icontianjia more" catchtap="more" data-index="{{index}}"></text>
+        </view>
+      </view>
+    </block>
+    <image src="cloud://colude-study-3gbbb4cha336b2cf.636f-colude-study-3gbbb4cha336b2cf-1304854335/毕设/imagesStatic/top.png" class='goTop' hidden='{{!floorstatus}}' bindtap="goTop"></image>
+  </van-tab>
+  <van-tab title="日韩风">
+    <block wx:for="{{songList}}" wx:key="index">
+      <view class="musiclist-container {{item.mId === playingId ? 'playing': ''}}" bindtap="onSelect" data-musicid="{{item.id}}" data-index="{{index}}">
+        <view class="musiclist-index">{{index+1}}</view>
+        <view class="musiclist-info">
+          <view class="musiclist-name">
+            {{item.mname}}
+          </view>
+          <view class="musiclist-singer">{{item.singer}}</view>
+          <text class="iconfont icontianjia more" catchtap="more" data-index="{{index}}"></text>
+        </view>
+      </view>
+    </block>
+    <image src="cloud://colude-study-3gbbb4cha336b2cf.636f-colude-study-3gbbb4cha336b2cf-1304854335/毕设/imagesStatic/top.png" class='goTop' hidden='{{!floorstatus}}' bindtap="goTop"></image>
+  </van-tab>
+  <van-tab title="嘻哈风">
+    <block wx:for="{{songList}}" wx:key="index">
+      <view class="musiclist-container  {{item.mId === playingId ? 'playing': ''}}" bindtap="onSelect" data-musicid="{{item.id}}" data-index="{{index}}">
+        <view class="musiclist-index">{{index+1}}</view>
+        <view class="musiclist-info">
+          <view class="musiclist-name">
+            {{item.mname}}
+          </view>
+          <view class="musiclist-singer">{{item.singer}}</view>
+          <text class="iconfont icontianjia more" catchtap="more" data-index="{{index}}"></text>
+        </view>
+      </view>
+    </block>
+    <image src="cloud://colude-study-3gbbb4cha336b2cf.636f-colude-study-3gbbb4cha336b2cf-1304854335/毕设/imagesStatic/top.png" class='goTop' hidden='{{!floorstatus}}' bindtap="goTop"></image>
+  </van-tab>
+  
+</van-tabs>
+
+<!-- 显示用户歌单信息 -->
+<van-dialog
+  use-slot
+  title="添加音乐到我的歌单"
+  show="{{isShow}}"
+  confirmButtonText="取消"
+  show-cancel-button="{{false}}"
+  showConfirmButton
+  bind:cancel="dialogOnClose"
+>
+<scroll-view scroll-y class="listScrollII">
+    <view class="scrollItem" wx:for="{{userSongList}}" wx:key="index" data-index="{{index}}" bindtap="addMyList">
+      <image src="{{item.coverImgUrl}}"></image>
+      <view class="musicInfo">
+        {{item.listName}}
+      </view>
+    </view>
+</scroll-view>
+</van-dialog>
+
+<!-- 底部简易播放器 -->
+<view wx:if="{{isPlaying===true}}" class="placeholder-view"></view>
+<view wx:if="{{isPlaying===true}}" class="smusicPlayer">
+  <image class="smusicPlayer-img" src="{{picUrl}}" bindtap="toSongPlay"></image>
+  <view class="smusicPlayer-infor">
+    <text class="smusicPlayer-mname" bindtap="toSongPlay">{{mname}}</text>
+    <text class="smusicPlayer-singer" bindtap="toSongPlay">{{singer}}</text>
+  </view>
+  <view class="icon-pre" bindtap="pre">
+    <text class="iconfont iconarrow-double-left"></text>
+  </view>
+  <view class="icon-play" bindtap="play">
+    <text wx:if="{{isPlay===true}}" class="iconfont iconzanting"></text>
+    <text wx:if="{{isPlay===false}}" class="iconfont iconcaret-right"></text>
+  </view>
+  <view class="icon-next" bindtap="next">
+    <text class="iconfont iconarrow-double-right"></text>
+  </view>
+</view>

@@ -1,0 +1,19 @@
+<view class="message-list">
+  <block wx:for="{{messageList}}" wx:key="_id">
+    <view class="message-panel"> 
+      <view class="message">
+        <view class="message-title">
+          <image class="message-portrait" src="{{item.pic}}"></image>
+          <view class="message-box">
+            <view class="message-nickName">{{item.rootName}}</view>
+            <view class="message-time">{{item.messageTime}}</view>
+          </view>
+        </view>
+        <view class="message-content">
+          <text class="title">{{item.title}}</text>
+          <text>{{item.content}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

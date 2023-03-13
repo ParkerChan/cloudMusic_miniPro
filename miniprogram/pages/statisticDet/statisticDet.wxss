@@ -1,0 +1,9 @@
+.myChart{
+  width: 750rpx;
+  height: 750rpx;
+}
+
+mychart-dom{
+  width: 100%;
+  height: 100%;
+}

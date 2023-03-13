@@ -1,0 +1,40 @@
+<view class="searchContainer">
+  <!-- 头部搜索区 -->
+  <view class="header">
+    <view class="searchInput">
+      <text class="iconfont iconsousuo searchIcon"></text>
+      <input type="text" placeholder="{{keyWords}}" bindinput="handleInputChange"/>
+    </view>
+    <text class="cancel" bindtap="search">搜索</text>
+  </view>
+
+  <!-- 搜索展示区域 -->
+  <block wx:if="{{listShow}}">
+    <view class="showSearch">
+      <view class="searchContent">搜索内容:{{searchContent}}</view>
+      <view class="searchList">
+        <view class="searchItem" wx:for="{{searchList}}" wx:key="index" data-index="{{index}}"  bindtap="searchList">
+          <text class="iconfont iconsousuo"></text>
+          <text class="content">{{item.name}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <!-- 热搜榜 -->
+  <block wx:else>
+    <!-- 历史记录 -->
+    <view class="hotContainer">
+      <view class="title">热搜榜</view>
+      <!-- 热搜列表 -->
+      <view class="hotList">
+        <view class="hotItem" wx:for="{{hotSearchList}}" wx:key="index" data-index="{{index}}" bindtap="searchHot">
+          <text class="order">{{index+1}}</text>
+          <text>{{item.searchWord}}</text>
+          <image class="icontImg" wx:if="{{item.iconUrl}}" src="{{item.iconUrl}}"></image>
+        </view>
+      </view>
+    </view>
+  </block>
+  
+</view>

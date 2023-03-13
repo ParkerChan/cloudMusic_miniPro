@@ -1,0 +1,83 @@
+
+page {
+  box-sizing: border-box;
+}
+
+view {
+  box-sizing: border-box;
+}
+
+.label{
+  border-left: 3px solid red;
+  font-size: 32rpx;
+  padding-left: 8rpx;
+  margin-top: 16rpx;
+}
+
+.ranking-tab{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 16rpx;
+}
+
+.ranking-tab .track-list{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 16rpx;
+  overflow: hidden;
+}
+
+.ranking-tab .track-list text{
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 28rpx;
+  flex: 1;
+}
+
+.ranking-tab .netmusic-item{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 16rpx;
+    border-bottom: 1rpx solid #e1e2e3;
+    border-top: 1rpx solid #e1e2e3;
+}
+
+.ranking-tab .netmusic-item image{
+  width: 240rpx;
+  height: 240rpx;
+  flex-shrink: 0;
+}
+
+.ranking-card-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 0 -8rpx;
+    box-sizing: border-box;
+}
+
+.ranking-card-container .ranking-card{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 33.3%;
+      padding: 8rpx;
+      box-sizing: border-box;
+}
+
+.ranking-card-container .ranking-card image{
+  width: 100%;
+}
+
+.ranking-card-container .ranking-card text{
+  font-size: 24rpx;
+  margin-top: 8rpx;
+}

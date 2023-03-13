@@ -1,0 +1,6 @@
+<view class="header">
+  <text class="title">{{title}}</text>
+  <view>
+    <text>{{nav}}</text>
+  </view>
+</view>

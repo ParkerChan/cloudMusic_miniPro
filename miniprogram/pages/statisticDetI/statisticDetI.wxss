@@ -1,0 +1,17 @@
+.myChart{
+  width: 750rpx;
+  height: 550rpx;
+}
+
+mychart-domI{
+  width: 100%;
+  height: 100%;
+}
+mychart-domII{
+  width: 100%;
+  height: 100%;
+}
+mychart-domIII{
+  width: 100%;
+  height: 100%;
+}

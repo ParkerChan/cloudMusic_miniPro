@@ -1,0 +1,12 @@
+<!--index.wxml-->
+<view class="panel">
+  <view class="chart-with-img" bindtap="toChartsDetailI">
+    <image src="/static/images/charts/bar.png"></image>
+    所有用户播放次数
+  </view>
+  <view class="chart-with-img" bindtap="toChartsDetailII">
+    <image src="/static/images/charts/bar.png"></image>
+    各类用户最热歌曲
+  </view>
+</view>
+

@@ -1,0 +1,23 @@
+
+<view class="container">
+  <view class="wrapper">
+    <view class="left-top-sign">LOGIN</view>
+    <view class="welcome">
+      欢迎回来！
+    </view>
+    <view class="input-content">
+      <view class="input-item">
+        <text class="tit">手机号码</text>
+        <input id="phone" type="text" placeholder="请输入手机号码（填写真实的网易云账号）" bindinput="handInput" />
+      </view>
+      <view class="input-item">
+        <text class="tit">密码</text>
+        <input id="password" type="password"  placeholder="请输入密码" bindinput="handInput"/>
+      </view>
+    </view>
+    <button class="confirm-btn" bindtap="login">登录</button>
+    <view class="wechat-section" bindtap="wechatLogin">
+      没有网易账户？使用微信登录吧~
+    </view>
+  </view>
+</view>

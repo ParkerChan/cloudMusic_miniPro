@@ -1,0 +1,79 @@
+<view>
+  <!-- 轮播图 -->
+  <swiper class="banners" indicator-dots="true" indicator-color="ivory" indicator-active-color="#d43c33" autoplay="true" duration="1000" interval="2000" circular="true">
+    <swiper-item wx:for="{{banners}}" wx:key="bannerId" wx:for-item="bannerItem">
+      <image src="{{bannerItem.pic}}"></image>
+    </swiper-item>
+  </swiper>
+
+  <!-- 图标（今日推荐等） -->
+  <view class="navContainer">
+    <view class="navItem">
+      <text class="iconfont icontuijian" bindtap="toRecommendList"></text>
+      <text>今日推荐</text>
+    </view>
+    <view class="navItem" bindtap="toRankTab">
+      <text class="iconfont iconpaihangbang"></text>
+      <text>热歌排行榜</text>
+    </view>
+    <view class="navItem" bindtap="toHotList">
+      <text class="iconfont iconremen"></text>
+      <text>热门歌单</text>
+    </view>
+    <view class="navItem" bindtap="toSearch">
+      <text class="iconfont iconsousuo"></text>
+      <text>搜索</text>
+    </view>
+  </view>
+
+  <!-- 推荐歌单区域 -->
+  <view class="recommendContainer">
+    <view class="header">
+      <text class="title">推荐歌单</text>
+      <view>
+        <text>为你精心推荐</text>
+      </view>
+    </view>
+
+    <!-- 内容区 -->
+    <scroll-view class="recommendScroll" enable-flex="true" scroll-x="true" >
+      <view class="scrollItem" wx:for="{{hotRecommendsong}}" wx:key="index" wx:for-item="recommendItem" data-index="{{index}}" bindtap="toRecommendSongList">
+        <image src="{{recommendItem.picUrl}}"></image>
+        <text>{{recommendItem.name}}</text>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 推荐新音乐区域 -->
+  <view class="newList">
+      <!-- 头部区域 -->
+      <NavHeader title="近日新音乐" nav="新歌"></NavHeader>
+      <!-- 内容区域 -->
+      <scroll-view class="recommendScroll" enable-flex="true" scroll-x="true" >
+      <view class="scrollItem" wx:for="{{newSong}}" wx:key="index" wx:for-item="newItem" data-index="{{index}}" bindtap="toSongDetail">
+        <image src="{{newItem.picUrl}}"></image>
+        <text>{{newItem.name}}</text>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+
+<!-- 底部简易播放器 -->
+<view wx:if="{{isPlaying===true}}" class="placeholder-view"></view>
+<view wx:if="{{isPlaying===true}}" class="smusicPlayer">
+  <image class="smusicPlayer-img" src="{{picUrl}}" bindtap="toSongPlay"></image>
+  <view class="smusicPlayer-infor">
+    <text class="smusicPlayer-mname" bindtap="toSongPlay">{{mname}}</text>
+    <text class="smusicPlayer-singer" bindtap="toSongPlay">{{singer}}</text>
+  </view>
+  <view class="icon-pre" bindtap="pre">
+    <text class="iconfont iconarrow-double-left"></text>
+  </view>
+  <view class="icon-play" bindtap="play">
+    <text wx:if="{{isPlay===true}}" class="iconfont iconzanting"></text>
+    <text wx:if="{{isPlay===false}}" class="iconfont iconcaret-right"></text>
+  </view>
+  <view class="icon-next" bindtap="next">
+    <text class="iconfont iconarrow-double-right"></text>
+  </view>
+</view>

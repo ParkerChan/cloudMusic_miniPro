@@ -1,0 +1,25 @@
+<view class="detail-container" style="background: url({{bgUrl}}) no-repeat top/cover"></view>
+<view class="detail-mask"></view>
+<view class="detail-info">
+  <image class="detail-img" src="{{coverImgUrl}}"></image>
+  <view class="detail">
+    <view class="detail-nm">{{listName}}</view>
+    <text  wx:if="{{isNone===false}}" class="iconfont iconcaret-right suiji" bindtap="suiPlay">随机播放全部</text>
+    <text  wx:if="{{isNone===true}}">该歌单暂无歌曲哦~快去添加歌曲吧</text>
+  </view>
+</view>
+
+<block wx:for="{{songList}}" wx:key="index">
+  <view class="musiclist-container {{item.mId === playingId ? 'playing': ''}}" bind:tap="toSongDetail" data-musicid="{{item.mid}}" data-index="{{index}}">
+    <view class="musiclist-index">{{index+1}}</view>
+    <view class="musiclist-info">
+      <view class="musiclist-name">
+        {{item.mname}}
+      </view>
+      <view class="musiclist-singer">{{item.singer}}</view>
+      <text class="iconfont iconshanchu more" catchtap="del" data-index="{{index}}"></text>
+    </view>
+  </view>
+</block>
+
+<image src="cloud://colude-study-3gbbb4cha336b2cf.636f-colude-study-3gbbb4cha336b2cf-1304854335/毕设/imagesStatic/top.png" class='goTop' hidden='{{!floorstatus}}' bindtap="goTop"></image>

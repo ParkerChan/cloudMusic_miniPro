@@ -1,0 +1,255 @@
+<view class="container">
+  <view class="top-panel" wx:if="{{loginMode==1}}" style="background-image: url({{userInfor.backgroundUrl}})">
+    <!-- 用户个人基本信息,如:头像,昵称,性别 -->
+    <view class="basic-info">
+      <image class="avatar" src='{{userInfor.avatarUrl}}' bindtap="toOff"></image>
+      <text>{{userInfor.nickname}}</text>
+    </view>
+
+    <view class="ugc-info">
+      <view  bindtap="toMyLike">
+        <text class="iconfont iconziyuan177"></text>
+        <text>我的收藏</text>
+      </view>
+      <view  bindtap="toMyCount">
+        <text class="iconfont iconzhengzaibofang"></text>
+        <text>播放记录</text>
+      </view>
+      <view wx:if="{{isRoot===true}}" bindtap="toRoot">
+        <text class="iconfont iconhoutai"></text>
+        <text>管理员后台</text>
+      </view>
+      <view wx:else bindtap="showSay">
+        <text class="iconfont iconxiaoxi"></text>
+        <text>我想说</text>
+      </view>
+      <view wx:if="{{isRoot===false}}"  bindtap="toMessage">
+        <text class="iconfont icongonggao"></text>
+        <text>公告</text>
+      </view>
+    </view>
+
+  </view>
+
+  <view class="top-panel" wx:if="{{loginMode==2}}" style= "background-image: url({{url1}})">
+    <!-- 用户个人基本信息,如:头像,昵称 -->
+    <view class="basic-info">
+      <image class="avatar" src='{{userInfor.avatarUrl}}' bindtap="toOff"></image>
+      <text>{{userInfor.nickName}}</text>
+    </view>
+
+    <view class="ugc-info">
+      <view bindtap="toMyLike">
+        <text class="iconfont iconziyuan177"></text>
+        <text>我的收藏</text>
+      </view>
+      <view bindtap="toMyCount">
+        <text class="iconfont iconzhengzaibofang"></text>
+        <text>播放记录</text>
+      </view>
+      <view wx:if="{{isRoot===true}}" bindtap="toRoot">
+        <text class="iconfont iconhoutai"></text>
+        <text>管理员后台</text>
+      </view>
+      <view wx:if="{{isRoot===true}}" bindtap="showSendMes">
+        <text class="iconfont icongonggao1"></text>
+        <text>发布公告</text>
+      </view>
+      <view wx:if="{{isRoot===true}}" bindtap="toStatistic">
+        <text class="iconfont iconB"></text>
+        <text>统计</text>
+      </view>
+      <view wx:if="{{isRoot===false}}" bindtap="showSay">
+        <text class="iconfont iconxiaoxi"></text>
+        <text>我想说</text>
+      </view>
+      <view wx:if="{{isRoot===false}}"  bindtap="toMessage">
+        <text class="iconfont icongonggao"></text>
+        <text>公告</text>
+      </view>
+    </view>
+
+  </view>
+
+  <view class="top-panel" wx:if="{{loginMode==0}}" style="background-image: url({{url1}})">
+    <!-- 用户个人基本信息,如:头像,昵称,性别 -->
+    <view class="basic-info">
+      <image class="avatar" src="cloud://colude-study-3gbbb4cha336b2cf.636f-colude-study-3gbbb4cha336b2cf-1304854335/毕设/imagesStatic/niu.png" bindtap="toLogin"></image>
+      <text>游客(点击头像登录~)</text>
+    </view>
+
+    <view class="ugc-info">
+      <view bindtap="toMyLike">
+        <text class="iconfont iconziyuan177"></text>
+        <text>我的收藏</text>
+      </view>
+      <view bindtap="toMyCount">
+        <text class="iconfont iconzhengzaibofang"></text>
+        <text>播放记录</text>
+      </view>
+      <view bindtap="toMessage">
+        <text class="iconfont icongonggao"></text>
+        <text>公告</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="playlist-title" wx:if="{{loginMode==0}}">
+    <text>欢迎您，尊敬的游客</text>
+  </view>
+
+  <view class="playlist-title" wx:if="{{loginMode==1}}">
+    <text>{{userInfor.nickname}}的歌单</text>
+    <text  class="iconfont icondanyehuaban" bindtap="showCreatSongList"></text>
+  </view>
+
+  <view class="playlist-title" wx:if="{{loginMode==2}}">
+    <text>{{userInfor.nickName}}的歌单</text>
+    <text  class="iconfont icondanyehuaban" bindtap="showCreatSongList"></text>
+  </view>
+
+
+<!--  <view wx:if="{{loginMode==1}}"
+    wx:for="{{songList}}"
+    wx:key="index"
+    wx:for-item="songlist"
+    class="playlist-item"
+    data-index="{{index}}"
+    bindtap="toSongListDetail"
+  >
+    <image class="cover-img" src="{{songlist.coverImgUrl}}"></image>
+    <view class="playlist-info">
+      <text class="name">{{songlist.name}}</text>
+    </view>
+  </view> -->
+
+  <view wx:if="{{loginMode==1&&songListII}}"
+    wx:for="{{songListII}}"
+    wx:key="index"
+    wx:for-item="songlist"
+    class="playlist-item"
+    data-index="{{index}}"
+    bindtap="toSongListDetailII"
+  >
+    <image class="cover-img" src="{{songlist.coverImgUrl}}"></image>
+    <view class="playlist-info">
+      <text class="name">{{songlist.listName}}</text>
+    </view>
+    <text class="iconfont icongengduo1 more" catchtap="listMore" data-listName_sle="{{songlist.listName}}"></text>
+  </view>
+
+  <view wx:if="{{loginMode==2}}"
+    wx:for="{{songListII}}"
+    wx:key="index"
+    wx:for-item="songlist"
+    class="playlist-item"
+    data-index="{{index}}"
+    bindtap="toSongListDetailII"
+  >
+    <image class="cover-img" src="{{songlist.coverImgUrl}}"></image>
+    <view class="playlist-info">
+        <text class="name">{{songlist.listName}}</text>
+    </view>
+    <text class="iconfont icongengduo1 more" catchtap="listMore" data-listName_sle="{{songlist.listName}}"></text>
+  </view>
+</view>
+
+<!-- 新建歌单列表展示 -->
+<van-dialog
+  use-slot
+  title="新建我的歌单"
+  show="{{showCreatList}}"
+  confirmButtonText="取消"
+  show-confirm-button
+  show-cancel-button="{{false}}"
+  bind:confirm="dialogOnClose"
+>
+<form bindsubmit="createSongList" class="createSongList">
+  输入歌单名：
+  <input class="listName" name="listName" placeholder="请输入新建歌单的名称" value="{{value_title}}" bindinput="cheak" maxlength="11" autocomplete="off"></input>
+  <button formType="submit" style="color:skyblue" class="listBunt" plain="true">确定</button>
+</form>
+</van-dialog>
+
+<!-- 用户评价弹窗 -->
+<van-dialog
+  use-slot
+  title="我想说点什么"
+  show="{{showSaying}}"
+  confirmButtonText="取消"
+  show-confirm-button
+  show-cancel-button="{{false}}"
+  bind:confirm="dialogOnClose"
+>
+<form bindsubmit="userSay" class="userSay">
+  <view>
+    <textarea placeholder="写下你想说的内容吧~最大字数150" maxlength="150" name="content" class="Content" value="{{value_user}}"></textarea>
+  </view>
+  <button formType="submit" style="color:skyblue" class="userSayBunt" plain="true">发送</button>
+</form>
+</van-dialog>
+
+<!-- 发布公告 -->
+<van-dialog
+  use-slot
+  title="发布公告"
+  show="{{showGongGao}}"
+  confirmButtonText="取消"
+  show-confirm-button
+  show-cancel-button="{{false}}"
+  bind:cancel="dialogOnClose"
+>
+<form bindsubmit="sendMes" class="Mes">
+  <view>
+    标题:<input name="title" placeholder="输入标题" maxlength="15" class="MesTitle" value="{{valueI}}"></input>
+  </view>
+  <view>
+    发布内容:<textarea placeholder="内容" maxlength="150" name="content"  class="MesContent" value="{{valueII}}"></textarea>
+  </view>
+  <button formType="submit" style="color:skyblue" plain="true" class="mesSendbunt">发布</button>
+</form>
+</van-dialog>
+
+<!-- 歌单操作弹窗列表 -->
+
+<van-action-sheet
+  show="{{showListMore}}"
+  actions="{{ actions }}"
+  bind:close="onCloseII"
+  bind:select="onSelectII"
+/>
+
+<van-dialog
+  use-slot
+  title="输入新的歌单名"
+  show="{{showUpListName}}"
+  confirmButtonText="取消"
+  show-confirm-button
+  show-cancel-button="{{false}}"
+  bind:cancel="dialogOnClose"
+>
+<form bindsubmit="UpSongListName" class="upDate">
+  输入歌单名：<input class="listName" name="listNameN" placeholder="输入新的歌单名" value="{{value_titleN}}" bindinput="cheak" maxlength="11" autocomplete="off"></input>
+  <button formType="submit" style="color:skyblue" class="updateName" plain="true">确定</button>
+</form>
+</van-dialog>
+
+<!-- 底部简易播放器 -->
+<view wx:if="{{isPlaying===true}}" class="placeholder-view"></view>
+<view wx:if="{{isPlaying===true}}" class="smusicPlayer">
+  <image class="smusicPlayer-img" src="{{picUrl}}" bindtap="toSongPlay"></image>
+  <view class="smusicPlayer-infor">
+    <text class="smusicPlayer-mname" bindtap="toSongPlay">{{mname}}</text>
+    <text class="smusicPlayer-singer" bindtap="toSongPlay">{{singer}}</text>
+  </view>
+  <view class="icon-pre" bindtap="pre">
+    <text class="iconfont iconarrow-double-left"></text>
+  </view>
+  <view class="icon-play" bindtap="play">
+    <text wx:if="{{isPlay===true}}" class="iconfont iconzanting"></text>
+    <text wx:if="{{isPlay===false}}" class="iconfont iconcaret-right"></text>
+  </view>
+  <view class="icon-next" bindtap="next">
+    <text class="iconfont iconarrow-double-right"></text>
+  </view>
+</view>

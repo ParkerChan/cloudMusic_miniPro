@@ -1,0 +1,62 @@
+
+<van-tabs active="{{active}}" bind:change="onClick">
+  <van-tab title="歌手">
+    <block wx:for="{{singerList}}" wx:key="index" bindtap="toSingerDetail">
+      <view class="musiclist-container" data-singerid="{{item.id}}" data-index="{{index}}" bindtap="toSingerDetail">
+        <view class="musiclist-index">{{index+1}}</view>
+          <image class="musiclist-img" src="{{item.picUrl}}"></image>
+        <view class="musiclist-info">
+          <view class="musiclist-name">
+            {{item.name}}
+          </view>
+        </view>
+      </view>
+    </block>
+  </van-tab>
+  <van-tab title="单曲">
+    <block wx:for="{{songList}}" wx:key="index">
+      <view class="musiclist-container {{item.id === playingId ? 'playing': ''}}" bind:tap="onSelect" data-musicid="{{item.id}}" data-index="{{index}}">
+        <view class="musiclist-index">{{index+1}}</view>
+        <view class="musiclist-info">
+          <view class="musiclist-name">
+            {{item.name}}
+            <text class="musiclist-alia">{{item.alia.length==0?"":item.alia[0]}}</text>
+          </view>
+          <view class="musiclist-singer">{{item.artists[0].name}} - {{item.album.name}}</view>
+          <text class="iconfont icontianjia more" catchtap="more" data-index="{{index}}"></text>
+        </view>
+      </view>
+    </block>
+  </van-tab>
+  <van-tab title="歌单">
+    <view wx:if="{{songlistList.length!=0}}" class="playlist-Container">
+      <block wx:for="{{songlistList}}" wx:key="index" data-index="{{index}}" bindtap="toListDetil">
+        <view class="playlist-container" bindtap="toListDetil"  data-index="{{index}}">
+          <image class="playlist-Img" src="{{item.coverImgUrl}}"></image>
+          <text class="playlist-Name">{{item.name}}</text>
+        </view>
+      </block>
+    </view>
+  </van-tab>
+  
+</van-tabs>
+
+<!-- 显示用户歌单信息 -->
+<van-dialog
+  use-slot
+  title="添加音乐到我的歌单"
+  show="{{isShow}}"
+  confirmButtonText="取消"
+  show-cancel-button="{{false}}"
+  showConfirmButton
+  bind:cancel="dialogOnClose"
+>
+<scroll-view scroll-y class="listScrollII">
+    <view class="scrollItem" wx:for="{{userSongList}}" wx:key="index" data-index="{{index}}" bindtap="addMyList">
+      <image src="{{item.coverImgUrl}}"></image>
+      <view class="musicInfo">
+        {{item.listName}}
+      </view>
+    </view>
+</scroll-view>
+</van-dialog>

@@ -1,0 +1,21 @@
+{
+  "name": "miniprogram",
+  "version": "1.0.0",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vant/weapp": "^1.6.8",
+    "dayjs": "^1.10.4",
+    "moment": "^2.29.1",
+    "pubsub-js": "^1.9.3"
+  },
+  "devDependencies": {},
+  "description": ""
+}

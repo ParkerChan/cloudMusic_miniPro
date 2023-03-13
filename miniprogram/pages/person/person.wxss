@@ -1,0 +1,229 @@
+.top-panel{
+  background-size: 100%;
+  background-position: center center;
+  height: 40vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 32rpx;
+}
+
+.top-panel .basic-info{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 25rpx;
+}
+
+.top-panel .ugc-info{
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  font-size: 28rpx;}
+
+  .top-panel .ugc-info view{
+    height: 125rpx;
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+.basic-info .avatar{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}
+
+.basic-info .avatar text{
+  padding: 0 16rpx;
+  font-size: 50rpx;
+  font-weight: 300;
+}
+
+.playlist-title{
+  display: flex;
+  background-color: #eeeeee;
+  font-size: 28rpx;
+  padding: 12rpx 16rpx;
+  color: #666666;
+}
+
+.playlist-item{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 16rpx;
+  border-bottom: 1rpx solid #e1e2e3;
+}
+
+.playlist-item  .cover-img{
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 15rpx;
+}
+
+.playlist-item .playlist-info{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 16rpx;
+}
+
+.playlist-item .playlist-info .name{
+  font-size: 32rpx;
+}
+
+.playlist-item .playlist-info .info{
+  font-size: 24rpx;
+  color: #999;
+}
+
+.listName{
+  margin-left: 15rpx;
+  margin-top: 20rpx;
+  margin-bottom: 25rpx;
+  height: 80rpx;
+}
+
+.createSongList .listBunt{
+  font-size: 30rpx;
+  border: 0;
+}
+
+.userSay .Content{
+  margin-top: 25rpx;
+  margin-bottom: 25rpx;
+  margin-left: 15rpx;
+}
+
+.userSay .userSayBunt{
+  font-size: 30rpx;
+  border: 0;
+}
+ 
+.Mes .MesTitle{
+  height: 55rpx;
+  margin-left: 15rpx;
+  margin-top: 20rpx;
+  margin-bottom: 25rpx;
+}
+
+.Mes .MesContent{
+  width: 100%;
+  margin-left: 15rpx;
+  margin-top: 25rpx;
+  margin-bottom: 25rpx;
+}
+
+.Mes .mesSendbunt{
+  font-size: 30rpx;
+  border: 0;
+}
+
+.upDate .updateName{
+  font-size: 30rpx;
+  border: 0;
+}
+
+.more{
+  position: absolute;
+  right: 0;
+  font-size: 35rpx;
+  text-align: right;
+  width: 80rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+/*简易播放器*/
+.placeholder-view {
+  width: 100%;
+  height: 75rpx;
+}
+.smusicPlayer-infor{
+  display: flex;
+  flex-direction: column;
+}
+.smusicPlayer .smusicPlayer-infor text{
+  width: 200rpx;
+  font-size: 28rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  margin-left: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+
+.smusicPlayer .icon-play{
+  position: absolute;
+  line-height: 80rpx;
+  width: 80rpx;
+  height: 80rpx;
+  left: 500rpx;
+  border: 10rpx solid rgb(10, 10, 10);
+  border-radius: 100%;
+}
+.smusicPlayer .icon-play text{
+  font-size: 55rpx;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.smusicPlayer .icon-next{
+  position: absolute;
+  line-height: 80rpx;
+  width: 80rpx;
+  height: 80rpx;
+  right: 50rpx;
+  border: 10rpx solid rgb(10, 10, 10);
+  border-radius: 100%;
+}
+
+.smusicPlayer .icon-pre{
+  position: absolute;
+  line-height: 80rpx;
+  width: 80rpx;
+  height: 80rpx;
+  left: 400rpx;
+  border: 10rpx solid rgb(10, 10, 10);
+  border-radius: 100%;
+}
+.smusicPlayer .icon-pre text{
+  font-size: 55rpx;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.smusicPlayer .icon-next text{
+  font-size: 55rpx;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.smusicPlayer {
+  border-radius: 3%;
+  display: flex;
+  width: 100%;
+  padding: 20rpx 0;
+  background-color: #b6b3b3;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.smusicPlayer-img{
+  width: 85rpx;
+  height: 85rpx;
+  border-radius: 70%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}

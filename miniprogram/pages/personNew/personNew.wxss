@@ -1,0 +1,7 @@
+/* pages/personNew/personNew.wxss */
+page{
+  background: #d1cbcb;
+}
+.profile-header image{
+  border-radius: 50%;
+}

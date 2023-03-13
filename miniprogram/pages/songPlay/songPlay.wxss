@@ -1,0 +1,149 @@
+.songPlayCon{
+  height: 100%;
+  background:rgba(104, 82, 82, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.songPlayCon .mname text{
+  text-align: center;
+  width: 200rpx;
+  font-size: 105rpx;
+  font-weight: 1000;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  margin-left: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.songPlayCon .singer text{
+  text-align: center;
+  width: 200rpx;
+  font-size: 35rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  margin-left: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.kongge{
+  position: relative;
+  left: 60rpx;
+  width: 192rpx;
+  height: 380rpx;
+}
+
+/* 磁盘动画 */
+.disCon{
+  position: relative;
+  top: -170rpx;
+  width: 598rpx;
+  height: 598rpx;
+}
+
+.discAnimation{
+  animation: disc 4s linear infinite;
+  animation-delay: 1s;
+}
+/* 设置动画帧：1.from to(起始帧->结束帧);2.百分比(多用于复杂动画，不止两针) */
+@keyframes disc {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.pan{
+  width: 598rpx;
+  height: 598rpx;
+}
+
+
+.musicImg{
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  margin: auto;
+  width: 370rpx;
+  height: 370rpx;
+  border-radius: 50%;
+}
+
+/* 底部控制区域 */
+
+.musicControl{
+  position: absolute;
+  bottom: 40rpx;
+  left: 0;
+  border-top:1rpx solid red;
+  width: 100%;
+  display: flex;
+}
+.musicControl text{
+  width: 20%;
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  color:#fff;
+  font-size: 50rpx;
+}
+.musicControl text.big{
+  font-size: 80rpx;
+}
+
+/*进度条*/
+.Control{
+  position: absolute;
+  bottom: 200rpx;
+  width: 640rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  display: flex;
+}
+.barCon{
+  width:450rpx;
+  height: 4rpx;
+}
+
+/*歌词*/
+
+.lrc{
+  position: absolute;
+  bottom: 280rpx;
+  width: 640rpx;
+  height: 300rpx;
+  line-height: 120rpx;
+  text-align: center;
+}
+
+.lrc text{
+  width: 100%;
+  font-size: 28rpx;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.songPlayCon .share{
+  border: 1rpx solid #333;
+  border-radius: 30rpx;
+}

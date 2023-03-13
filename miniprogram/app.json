@@ -1,0 +1,64 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/search/search",
+    "pages/login/login",
+    "pages/songList/songList",
+    "pages/songPlay/songPlay",
+    "pages/recommendSongList/recommendSongList",
+    "pages/rankingTab/rankingTab",
+    "pages/rankDetail/rankDetail",
+    "pages/personSongList/personSongList",
+    "pages/person/person",
+    "pages/myLike/myLike",
+    "pages/myPlayCount/myPlayCount",
+    "pages/hotSongList/hotSongList",
+    "pages/listDetail/listDetail",
+    "pages/personList/personList",
+    "pages/Root/Root",
+    "pages/Message/Message",
+    "pages/musics/musics",
+    "pages/searchDetail/searchDetail",
+    "pages/singerDetail/singerDetail",
+    "pages/recommendNew/recommendNew",
+    "pages/statistic/statistic",
+    "pages/statisticDet/statisticDet",
+    "pages/statisticDetI/statisticDetI",
+    "pages/statisticDetII/statisticDetII",
+    "pages/personNew/personNew"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#DC143C",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "微‘鑫’云音乐"
+  },
+  "tabBar": {
+    "color": "#569",
+    "selectedColor": "#000",
+    "backgroundColor": "#eee",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "/static/images/tarbs/index.png",
+        "selectedIconPath": "/static/images/tarbs/index_sle.png"
+      },
+      {
+        "pagePath": "pages/musics/musics",
+        "text": "音乐中心",
+        "iconPath": "/static/images/tarbs/music.png",
+        "selectedIconPath": "/static/images/tarbs/music_s.png"
+      },
+      {
+        "pagePath": "pages/person/person",
+        "text": "个人中心",
+        "iconPath": "/static/images/tarbs/person.png",
+        "selectedIconPath": "/static/images/tarbs/person_sle.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "requiredBackgroundModes": ["audio", "location"]
+}

@@ -1,0 +1,9 @@
+<!--<view class="myChart">
+  <ec-canvas id="mychart-domI" canvans-id="mychartI" ec="{{ecI}}"></ec-canvas>
+</view> -->
+<view class="myChart">
+  <ec-canvas id="mychart-domII" canvans-id="mychartII" ec="{{ecII}}"></ec-canvas>
+</view>
+<view class="myChart">
+  <ec-canvas id="mychart-domIII" canvans-id="mychartIII" ec="{{ecIII}}"></ec-canvas>
+</view>

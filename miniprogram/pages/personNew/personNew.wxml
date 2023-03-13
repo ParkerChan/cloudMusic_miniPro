@@ -1,0 +1,3 @@
+<view class="profile-header">
+  <image src="/static/images/charts/bar.png"></image>
+</view>

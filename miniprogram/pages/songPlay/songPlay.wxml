@@ -1,0 +1,41 @@
+<view class="songPlayCon">
+  <view class="mname">
+    <text>{{mname}}</text>
+  </view>
+  <view class="singer" bindtap="toSingerDetail">
+    <text>{{songDet.ar[0].name}}</text>
+  </view>
+  <view class="kongge"></view>
+  <view class="disCon {{isPlay && 'discAnimation'}}">
+    <image class="pan" src="/static/images/song/pan.png"></image>
+    <image class="musicImg" src="{{songDet.al.picUrl}}" bindtap="previewImage" bindlongpress="saveImage"></image>
+  </view>
+
+  <!-- 歌词 -->
+  <view  wx:if="{{lrcLoding}}" class="lrc">歌词加载中...</view>
+  <view wx:if="{{lrcLoding===false&&lrc.length!==0&&isDemo==false}}" class="lrc">
+  <text>{{nowLrc}}</text></view>
+  <view  wx:if="{{lrcLoding===false&&lrc.length===0&&lrcIsNull===false}}" class="lrc">纯音乐，暂无歌词</view>
+  <view  wx:if="{{isDemo&&lrcLoding===false}}" class="lrc">试听中~~</view>
+  <view  wx:if="{{lrcIsNull&&lrcLoding===false}}" class="lrc">暂无歌词</view>
+  <!-- 进度条 -->
+  <view class="Control">
+    <text>{{nowTime}}</text>
+    <view class="barCon">
+      <slider min="{{min}}" max="{{max}}" value="{{value}}" block-size="14" bindchange="slider" bindchanging="sliderNow"></slider>
+    </view>
+    <text>{{totalTime}}</text>
+  </view>
+  <!-- 底部区域 -->
+  <view class="musicControl">
+
+    <text wx:if="{{playMode===0}}" class="iconfont iconliebiaobofang" bindtap="changePlayMode"></text>
+    <text wx:if="{{playMode===1}}" class="iconfont iconicon-" bindtap="changePlayMode"></text>
+    <text wx:if="{{playMode===2}}" class="iconfont iconsuijibofang" bindtap="changePlayMode"></text>
+    <text class="iconfont iconarrow-double-left" bindtap="last"></text>
+    <text class="iconfont {{isPlay?'iconzanting':'iconcaret-right'}} big" bindtap="toPlay"></text>
+    <text class="iconfont iconarrow-double-right" bindtap="next"></text>
+    <text wx:if="{{isLike===true}}" class="iconfont iconxihuan" bindtap="like"></text>
+    <text wx:if="{{isLike===false}}" class="iconfont iconziyuan177" bindtap="like"></text>
+  </view>
+</view>

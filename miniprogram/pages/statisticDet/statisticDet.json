@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "ec-canvas":"../../ec-canvas/ec-canvas"
+  },
+  "navigationBarTitleText": "用户播放次数"
+}

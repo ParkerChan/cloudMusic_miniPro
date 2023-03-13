@@ -1,0 +1,78 @@
+<van-tabs active="{{active}}" bind:change="onClick">
+  <van-tab title="删除歌曲">
+    <block wx:for="{{delSongList}}" wx:key="index">
+      <view class="musiclist-container" data-musicid="{{item.id}}" data-index="{{index}}"  catchtap="delSong">
+        <view class="musiclist-index">{{index+1}}</view>
+        <view class="musiclist-info">
+          <view class="musiclist-name">
+            {{item.mname}}
+          </view>
+          <view class="musiclist-singer">{{item.singer}}</view>
+        </view>
+      </view>
+    </block>
+    <image src="cloud://colude-study-3gbbb4cha336b2cf.636f-colude-study-3gbbb4cha336b2cf-1304854335/毕设/imagesStatic/top.png" class='goTop' hidden='{{!floorstatus}}' bindtap="goTop"></image>
+  </van-tab>
+  <van-tab title="添加歌曲">
+    <block wx:for="{{allSongList}}" wx:key="index">
+  <view class="musiclist-container" data-musicid="{{item.id}}" data-index="{{index}}" bindtap="showAdd">
+    <view class="musiclist-index">{{index+1}}</view>
+    <view class="musiclist-info">
+      <view class="musiclist-name">
+        {{item.name}}
+        <text class="musiclist-alia">{{item.alia.length==0?"":item.alia[0]}}</text>
+      </view>
+      <view class="musiclist-singer">{{item.ar[0].name}} - {{item.al.name}}</view>
+    </view>
+  </view>
+</block>
+<image src="cloud://colude-study-3gbbb4cha336b2cf.636f-colude-study-3gbbb4cha336b2cf-1304854335/毕设/imagesStatic/top.png" class='goTop' hidden='{{!floorstatus}}' bindtap="goTop"></image>
+  </van-tab>
+  <van-tab title="用户评价">
+    <view class="userSay-list">
+      <block wx:for="{{userSayList}}" wx:key="_id">
+        <view class="userSay-panel"> 
+          <view class="userSay">
+            <view class="userSay-title">
+              <image class="userSay-portrait" src="{{item.picUrl}}"></image>
+              <view class="userSay-box">
+                <view class="userSay-nickName">{{item.userName}}</view>
+                <view class="userSay-time">{{item.sendTime}}</view>
+              </view>
+            </view>
+            <view class="userSay-content">
+              <text>{{item.content}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+  </view>
+  </van-tab>
+</van-tabs>
+
+<!-- 添加歌曲功能 -->
+<van-dialog
+  use-slot
+  title="添加音乐"
+  show="{{showAdd}}"
+  confirmButtonText="取消"
+  show-confirm-button
+  show-cancel-button="{{false}}"
+  bind:confirm="dialogOnClose"
+>
+  <form bindsubmit="addSong" class="add">
+    <view>
+      <text class="mname">歌曲名称：{{mname}}</text>
+    </view>
+    <view>
+      <text class="singer">歌手：{{singer}}</text>
+    </view>
+    <van-radio-group value="{{ radio }}" bind:change="onChangeII">
+      <van-radio name="0">华语风</van-radio>
+      <van-radio name="1">欧美风</van-radio>
+      <van-radio name="2">日韩风</van-radio>
+      <van-radio name="3">嘻哈风</van-radio>
+    </van-radio-group>
+    <button formType="submit" style="color:skyblue" plain="true" class="sureBunt">确定</button>
+  </form>
+</van-dialog>

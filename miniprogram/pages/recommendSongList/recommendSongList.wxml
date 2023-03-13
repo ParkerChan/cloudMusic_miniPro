@@ -1,0 +1,33 @@
+<view class="songListContainer">
+  <!-- 头部区域 -->
+  <view class="header">
+    <image src="{{bgUrl}}"></image>
+    <view class="content">
+      <text class="name">{{name}}</text>
+    </view>
+  </view>
+
+  <!-- 列表区域 -->
+  <view class="listContainer">
+    <view class="listHeader" bindtap="allSuiPlay">
+      <text class="iconfont iconcaret-right big">随机播放全部</text>
+    </view>
+  </view>
+<!-- 内容区域 -->
+
+  <scroll-view scroll-y class="listScroll" scroll-top='{{topNum}}' bindscroll="scrolltoupper">
+    <view class="scrollItem" wx:for="{{songList}}" wx:key="index" data-index="{{index}}" bindtap="toPlay"> 
+      <image src="{{item.al.picUrl}}"></image>
+      <view class="musicInfo">
+        <text class="title">{{item.name}}</text>
+        <text class="singer">{{item.ar[0].name}}</text>
+        <text class="more" bindtap="delSong" data-sId="{{item._id}}">
+          <text class="iconfont icongengduo"></text>
+        </text>
+      </view>
+    </view>
+    <image class='iconfont icontop goTop' hidden='{{!cangotop}}' catchtap='goTop'></image>
+  </scroll-view>
+</view>
+
+

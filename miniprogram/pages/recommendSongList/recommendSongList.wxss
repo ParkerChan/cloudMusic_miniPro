@@ -1,0 +1,101 @@
+.songListContainer .header{
+  position: relative;
+  width: 100%;
+  height: 300rpx;
+}
+
+.songListContainer .name{
+  display: flex;
+  font-size: 25rpx;
+  font-style: inherit;
+}
+
+.songListContainer .header image{
+  width: 100%;
+  height: 100%;
+}
+
+.songListContainer .header .content{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -150rpx;
+  margin-top: -50rpx;
+
+  width: 300rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  color:#fff
+}
+
+.listContainer{
+  position: relative;
+  top: -20rpx;
+  padding: 20rpx;
+  border-radius: 30rpx;
+  background:#fff;
+}
+
+.listContainer text.big{
+  font-size: 30rpx;
+}
+
+.listHeader{
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+/* 内容区样式 */
+
+.listScroll{
+  height: calc(100vh - 380rpx);
+}
+
+.scrollItem {
+  display: flex;
+  position: relative;
+  margin-bottom: 20rpx;
+}
+
+.scrollItem image{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 8rpx;
+  margin-left: 20rpx;
+}
+
+.musicInfo{
+  display: flex;
+  flex-direction: column;
+  margin-left: 10rpx;
+}
+
+.musicInfo text{
+  height: 75rpx;
+  line-height: 75rpx;
+  font-size: 30rpx;
+  max-width: 400rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.scrollItem .more{
+  position: absolute;
+  right: 0;
+  width: 90rpx;
+  height: 90rpx;
+  line-height: 80rpx;
+  text-align: right;
+}
+
+.listScroll image.goTop{
+  position: fixed;
+  bottom: 20px;
+  right: 15px;
+  width: 32px;
+  height: 32px;
+  font-size: 50rpx;
+}
+

@@ -1,0 +1,227 @@
+.banners{
+  width: 100%;
+  height: 300rpx;
+}
+
+.banners image{
+  width: 100%;
+  height: 100%;
+}
+
+/*导航图标区域*/
+
+.navContainer{
+  display: flex;
+}
+.navItem{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+
+.navItem .iconfont{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100rpx;
+  background: rgb(240, 19, 19);
+  font-size: 50rpx;
+  color: #fff;
+  margin: 20rpx 0;
+}
+
+.navItem text{
+  font-size: 26rpx;
+}
+
+/*推荐歌曲头部区域*/
+
+.recommendContainer{
+  padding:20rpx;
+}
+
+.recommendContainer .header .title{
+  font-size: 32rpx;
+  line-height: 80rpx;
+  color: #666;
+}
+
+.recommendContainer .header {
+  padding-bottom: 20rpx;
+}
+
+.recommendContainer .header .more{
+  float: right;
+  border: 1rpx solid #333333;
+  padding: 10rpx 20rpx;
+  font-size: 24rpx;
+  border-radius: 30rpx;
+}
+
+/*推荐内容区*/
+.recommendScroll{
+  display: flex;
+  height: 300rpx;
+}
+.scrollItem{
+  width:200rpx;
+  margin-right: 20rpx;
+}
+.scrollItem image{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius:10rpx;
+}
+.scrollItem text{
+  font-size: 26rpx;
+  /*单行文本溢出省略号代替
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;*/
+  /*多行文本溢出*/
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 新歌推荐  */
+.newList {
+  padding: 20rpx;
+}
+
+.newListSwiper {
+  height: 400rpx;
+}
+
+.swiperItem {
+  width: 96%;
+  background: #fbfbfb;
+}
+.swiperItem .title {
+  font-size: 30rpx;
+  line-height: 80rpx;
+
+}
+
+.musicItem {
+  /* 当一个元素设置为flex，其子元素会自动成为block元素*/
+  display: flex;
+  margin-bottom: 20rpx;
+}
+
+.musicItem image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 6rpx;
+}
+
+.musicItem .count {
+  width: 100rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+
+.musicItem .musicName {
+  height: 100rpx;
+  line-height: 100rpx;
+  max-width: 400rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*简易播放器*/
+.placeholder-view {
+  width: 100%;
+  height: 75rpx;
+}
+.smusicPlayer-infor{
+  display: flex;
+  flex-direction: column;
+}
+.smusicPlayer .smusicPlayer-infor text{
+  width: 200rpx;
+  font-size: 28rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  margin-left: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+
+.smusicPlayer .icon-play{
+  position: absolute;
+  line-height: 80rpx;
+  width: 80rpx;
+  height: 80rpx;
+  left: 500rpx;
+  border: 10rpx solid rgb(10, 10, 10);
+  border-radius: 100%;
+}
+.smusicPlayer .icon-play text{
+  font-size: 55rpx;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.smusicPlayer .icon-next{
+  position: absolute;
+  line-height: 80rpx;
+  width: 80rpx;
+  height: 80rpx;
+  right: 50rpx;
+  border: 10rpx solid rgb(10, 10, 10);
+  border-radius: 100%;
+}
+
+.smusicPlayer .icon-pre{
+  position: absolute;
+  line-height: 80rpx;
+  width: 80rpx;
+  height: 80rpx;
+  left: 400rpx;
+  border: 10rpx solid rgb(10, 10, 10);
+  border-radius: 100%;
+}
+.smusicPlayer .icon-pre text{
+  font-size: 55rpx;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.smusicPlayer .icon-next text{
+  font-size: 55rpx;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.smusicPlayer {
+  border-radius: 3%;
+  display: flex;
+  width: 100%;
+  padding: 20rpx 0;
+  background-color: #b6b3b3;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.smusicPlayer-img{
+  width: 85rpx;
+  height: 85rpx;
+  border-radius: 70%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
